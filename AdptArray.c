@@ -49,7 +49,6 @@ void DeleteAdptArray(PAdptArray arr){
 
 Result SetAdptArrayAt(PAdptArray arr, int index, PElement PnewElement){
 
-   PElement* newpElemArr;
 	if (arr == NULL)
 		return FAIL;
 
@@ -59,24 +58,28 @@ Result SetAdptArrayAt(PAdptArray arr, int index, PElement PnewElement){
 
 	if (index >= arr->size)
 	{
-// Extend Array
-        newpElemArr = (PElement*)calloc(index+1,sizeof(PElement));
+    // Extend Array
+        PElement* newpElemArr = (PElement*)calloc(index+1,sizeof(PElement));
 		if (newpElemArr == NULL){
 			return FAIL;
         }
+        // insert to the new array each pelement from the ElemArray
         for(int i=0; i<arr->size;i++){
             if(arr -> ElemArray[i]!=NULL){
                 newpElemArr[i]=arr->ElemArray[i];
             }
         }
+        // Free the currect array
 		free(arr->ElemArray);
+        // Replace the current array with the new array
 		arr->ElemArray = newpElemArr;
 	}
 
-	// // Delete Previous Elem
+	// Delete Previous Elem
     if(arr->ElemArray[index]!=NULL){
 	    arr->DelFunc((arr->ElemArray[index]));
     }
+    // Copy the new element to the array
     arr->ElemArray[index] = arr->CopyFunc(PnewElement);
 
 	// Update Array Size
