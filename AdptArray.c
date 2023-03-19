@@ -121,7 +121,7 @@ void PrintDB(PAdptArray arr){
         return;
     }
 
-    for(int i=0;i< arr->size; i++){
+    for(int i=0; i<arr->size; i++){
         if(arr->ElemArray[i]!=NULL){
             arr -> PrintFunc(arr->ElemArray[i]);
         }
