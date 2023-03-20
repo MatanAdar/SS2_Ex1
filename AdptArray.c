@@ -20,7 +20,7 @@ PAdptArray CreateAdptArray(COPY_FUNC CopyFunc, DEL_FUNC DelFunc, PRINT_FUNC Prin
     if(!new){
         return NULL;
     }
-    new ->size =0; 
+    new ->size =0;
     new -> ElemArray = NULL;
     new -> CopyFunc =CopyFunc;
     new -> DelFunc = DelFunc;
