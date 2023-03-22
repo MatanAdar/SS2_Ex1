@@ -3,7 +3,7 @@
 #include "AdptArray.h"
 
 
-// I got help from the solution from Moad A test of SS1 course 
+// I got help from the solution from Moad A test of SS1 course and from practice of week 11 of ADT 
 
 
 typedef struct AdptArray_{
