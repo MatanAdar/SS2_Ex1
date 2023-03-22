@@ -3,6 +3,9 @@
 #include "AdptArray.h"
 
 
+// I got help from the solution from Moad A test of SS1 course 
+
+
 typedef struct AdptArray_{
 
     PElement *ElemArray;
